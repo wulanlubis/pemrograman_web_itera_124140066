@@ -1,0 +1,155 @@
+/* ===== Variabel warna ===== */
+:root {
+  --bg: #f1f5f9;
+  --kertas: #ffffff;
+  --teks: #1e293b;
+  --redup: #64748b;
+  --garis: #e2e8f0;
+  --biru: #2563eb;
+  --biru-tua: #1d4ed8;
+  --merah: #dc2626;
+  --merah-tua: #b91c1c;
+  --hijau: #16a34a;
+}
+
+/* ===== Dasar ===== */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--teks);
+  line-height: 1.5;
+}
+
+h1 { text-align: center; margin: 8px 0 20px; }
+h2 { margin: 0 0 14px; font-size: 1.15rem; }
+
+/* ===== Layout ===== */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.card {
+  background: var(--kertas);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Form ===== */
+.field { margin-bottom: 12px; }
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 1px;
+}
+
+input.invalid { border-color: var(--merah); }
+
+.error {
+  display: block;
+  min-height: 1.2em;
+  margin-top: 4px;
+  color: var(--merah);
+  font-size: 0.85rem;
+}
+
+/* ===== Tombol ===== */
+button {
+  padding: 10px 16px;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--biru);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover { background: var(--biru-tua); }
+
+button.danger { background: var(--merah); }
+button.danger:hover { background: var(--merah-tua); }
+
+#form-barang button { width: 100%; }
+
+#btn-reset {
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* ===== Tabel ===== */
+.table-wrap { overflow-x: auto; }
+
+table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--garis);
+  text-align: left;
+}
+
+th {
+  font-size: 0.85rem;
+  color: var(--redup);
+}
+
+td.angka, th.angka {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+td button { padding: 6px 12px; font-size: 0.85rem; }
+
+/* ===== Ringkasan pembayaran ===== */
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+}
+
+.row.total {
+  margin: 8px 0 16px;
+  padding-top: 10px;
+  font-size: 1.2rem;
+  border-top: 2px solid var(--garis);
+}
+
+.kurang { color: var(--merah); }
+.cukup  { color: var(--hijau); }
+
+/* ===== Responsif ===== */
+@media (min-width: 700px) {
+  #form-barang {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 0 12px;
+  }
+  #form-barang button { grid-column: 1 / -1; }
+}

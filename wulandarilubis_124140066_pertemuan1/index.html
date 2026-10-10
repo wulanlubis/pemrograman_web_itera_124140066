@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini POS Kantin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Mini POS Kantin</h1>
+
+    <!-- 1. FORM INPUT -->
+    <section class="card">
+      <h2>Tambah Barang</h2>
+      <form id="form-barang" novalidate>
+        <div class="field">
+          <label for="nama">Nama Barang</label>
+          <input type="text" id="nama" placeholder="Contoh: Buku Tulis">
+          <small class="error" id="error-nama"></small>
+        </div>
+        <div class="field">
+          <label for="harga">Harga Satuan (Rp)</label>
+          <input type="number" id="harga" placeholder="Min. 500">
+          <small class="error" id="error-harga"></small>
+        </div>
+        <div class="field">
+          <label for="qty">Jumlah</label>
+          <input type="number" id="qty" placeholder="Min. 1">
+          <small class="error" id="error-qty"></small>
+        </div>
+        <button type="submit">Tambah ke Keranjang</button>
+      </form>
+    </section>
+
+    <!-- 2. TABEL KERANJANG -->
+    <section class="card">
+      <h2>Keranjang Belanja</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>No</th><th>Nama Barang</th><th>Harga</th><th>Qty</th><th>Subtotal</th><th>Aksi</th></tr>
+          </thead>
+          <tbody id="tabel-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 3. RINGKASAN & PEMBAYARAN -->
+    <section class="card">
+      <h2>Pembayaran</h2>
+      <div class="row"><span>Total Belanja</span><strong id="total-belanja">Rp 0</strong></div>
+      <div class="row"><span>Diskon</span><strong id="diskon">Rp 0</strong></div>
+      <div class="row total"><span>Total Akhir</span><strong id="total-akhir">Rp 0</strong></div>
+
+      <div class="field">
+        <label for="kode-promo">Kode Promo (opsional)</label>
+        <input type="text" id="kode-promo" placeholder="HEMAT10">
+      </div>
+      <div class="field">
+        <label for="uang-bayar">Uang Bayar (Rp)</label>
+        <input type="number" id="uang-bayar">
+      </div>
+      <div class="row"><span>Kembalian</span><strong id="kembalian">-</strong></div>
+
+      <button id="btn-reset" class="danger">Transaksi Baru / Reset</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

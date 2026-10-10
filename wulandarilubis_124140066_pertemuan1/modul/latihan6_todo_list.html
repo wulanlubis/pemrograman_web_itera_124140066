@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latihan 6 - Todo List</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 480px; margin: 30px auto; padding: 0 16px; }
+  .baris-input { display: flex; gap: 8px; }
+  input[type=text] { flex: 1; padding: 8px; }
+  button { padding: 8px 12px; cursor: pointer; }
+  .error { color: red; font-size: .85rem; min-height: 1em; }
+  ul { list-style: none; padding: 0; }
+  li { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #ddd; }
+  li span { flex: 1; }
+  li.selesai span { text-decoration: line-through; color: #888; }
+  .kosong { color: #777; }
+</style>
+</head>
+<body>
+<h2>Latihan 6: Todo List</h2>
+<div class="baris-input">
+  <input type="text" id="teks" placeholder="Tulis tugas baru...">
+  <button id="btn-tambah">Tambah</button>
+</div>
+<div class="error" id="error"></div>
+<p id="ringkas"></p>
+<ul id="daftar"></ul>
+
+<script>
+const KEY = "todoList";
+let todos = JSON.parse(localStorage.getItem(KEY)) || []; // { id, teks, selesai }
+
+function simpan() { localStorage.setItem(KEY, JSON.stringify(todos)); }
+
+function render() {
+  const ul = document.getElementById("daftar");
+  ul.innerHTML = "";
+
+  if (todos.length === 0) {
+    ul.innerHTML = '<li class="kosong">Belum ada tugas.</li>';
+  }
+
+  todos.forEach(function (t) {
+    const li = document.createElement("li");
+    if (t.selesai) li.classList.add("selesai");
+
+    const cek = document.createElement("input");
+    cek.type = "checkbox";
+    cek.checked = t.selesai;
+    cek.addEventListener("change", function () {
+      t.selesai = cek.checked;
+      simpan();
+      render();
+    });
+
+    const span = document.createElement("span");
+    span.textContent = t.teks;
+
+    const hapus = document.createElement("button");
+    hapus.textContent = "Hapus";
+    hapus.addEventListener("click", function () {
+      todos = todos.filter(function (x) { return x.id !== t.id; });
+      simpan();
+      render();
+    });
+
+    li.append(cek, span, hapus);
+    ul.appendChild(li);
+  });
+
+  const selesai = todos.filter(function (t) { return t.selesai; }).length;
+  document.getElementById("ringkas").textContent =
+    selesai + " dari " + todos.length + " tugas selesai.";
+}
+
+function tambahTodo() {
+  const input = document.getElementById("teks");
+  const teks = input.value.trim();
+  if (teks === "") {
+    document.getElementById("error").textContent = "Tugas tidak boleh kosong.";
+    return;
+  }
+  document.getElementById("error").textContent = "";
+  todos.push({ id: Date.now(), teks: teks, selesai: false });
+  simpan();
+  render();
+  input.value = "";
+  input.focus();
+}
+
+document.getElementById("btn-tambah").addEventListener("click", tambahTodo);
+document.getElementById("teks").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") tambahTodo();
+});
+
+render();
+</script>
+</body>
+</html>
