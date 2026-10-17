@@ -67,10 +67,9 @@ API digunakan untuk mendapatkan suhu, kelembapan, kode cuaca, dan kecepatan
 angin. Data cuaca membutuhkan koneksi internet.
 
 ## Screenshot
-Tambahkan screenshot aplikasi setelah dijalankan:
+Screenshot aplikasi setelah dijalankan:
 - `screenshots/dashboard.png`
-- `screenshots/task-management.png`
-- `screenshots/weather.png`
+- `screenshots/taskmanagement.png`
 
 ## Pengujian
 - [ ] Menambah tugas baru.
@@ -80,9 +79,3 @@ Tambahkan screenshot aplikasi setelah dijalankan:
 - [ ] Mencari dan memfilter tugas.
 - [ ] Memuat ulang halaman dan memeriksa persistensi data.
 - [ ] Menguji data cuaca ketika internet tersedia.
-
-## Pengembang
-Nama: [Nama Kamu]
-NIM: [NIM Kamu]
-Program Studi: Teknik Informatika
-Institut Teknologi Sumatera
