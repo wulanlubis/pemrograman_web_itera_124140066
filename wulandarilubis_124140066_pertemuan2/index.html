@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StudySpace, dashboard produktivitas mahasiswa.">
+    <title>StudySpace | Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a href="#" class="brand">Study<span>Space.</span></a>
+        <span class="student-label">Student Productivity Dashboard</span>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+                <h1>Hello, buddy! 👋</h1>
+                <p>Atur tugasmu, susun prioritas, dan selesaikan satu per satu.</p>
+            </div>
+            <div class="date-box">
+                <span id="today">Memuat tanggal...</span>
+                <strong>Stay productive ✨</strong>
+            </div>
+        </section>
+
+        <section class="summary-grid" aria-label="Ringkasan tugas">
+            <article class="summary-card">
+                <span class="summary-icon">📚</span>
+                <p>Total Tugas</p>
+                <h2 id="totalTasks">0</h2>
+            </article>
+            <article class="summary-card">
+                <span class="summary-icon">⏳</span>
+                <p>Belum Selesai</p>
+                <h2 id="pendingTasks">0</h2>
+            </article>
+            <article class="summary-card">
+                <span class="summary-icon">✅</span>
+                <p>Selesai</p>
+                <h2 id="completedTasks">0</h2>
+            </article>
+        </section>
+
+        <section class="content-grid">
+            <article class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">TASK MANAGEMENT</p>
+                        <h2 id="formTitle">Tambah Tugas</h2>
+                    </div>
+                    <span class="heading-icon">✍️</span>
+                </div>
+
+                <form id="taskForm">
+                    <label for="taskTitle">Nama tugas</label>
+                    <input
+                        type="text"
+                        id="taskTitle"
+                        placeholder="Contoh: Laporan praktikum"
+                        maxlength="100"
+                        required
+                    >
+
+                    <label for="taskCourse">Mata kuliah</label>
+                    <input
+                        type="text"
+                        id="taskCourse"
+                        placeholder="Contoh: Pemrograman Web"
+                        maxlength="60"
+                        required
+                    >
+
+                    <label for="taskDeadline">Deadline</label>
+                    <input type="date" id="taskDeadline" required>
+
+                    <label for="taskPriority">Prioritas</label>
+                    <select id="taskPriority">
+                        <option value="Rendah">Rendah</option>
+                        <option value="Sedang" selected>Sedang</option>
+                        <option value="Tinggi">Tinggi</option>
+                    </select>
+
+                    <div class="form-actions">
+                        <button type="submit" class="primary-btn" id="submitBtn">
+                            + Simpan Tugas
+                        </button>
+                        <button type="button" class="secondary-btn hidden" id="cancelEdit">
+                            Batal
+                        </button>
+                    </div>
+                </form>
+            </article>
+
+            <article class="panel task-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">YOUR TO-DO LIST</p>
+                        <h2>Daftar Tugas</h2>
+                    </div>
+                    <span class="heading-icon">🗂️</span>
+                </div>
+
+                <div class="toolbar">
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Cari tugas atau mata kuliah..."
+                        aria-label="Cari tugas"
+                    >
+                    <select id="filterStatus" aria-label="Filter status">
+                        <option value="Semua">Semua Status</option>
+                        <option value="Belum">Belum Selesai</option>
+                        <option value="Selesai">Selesai</option>
+                    </select>
+                </div>
+
+                <p id="taskCount" class="muted">0 tugas ditampilkan</p>
+                <div id="taskList" class="task-list"></div>
+                <p id="emptyState" class="empty-state">
+                    Belum ada tugas. Yuk, tambahkan tugas pertamamu! 🌱
+                </p>
+            </article>
+        </section>
+
+        <section class="panel weather-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">WEATHER UPDATE</p>
+                    <h2>Cuaca sekitar ITERA</h2>
+                    <p class="muted">Informasi cuaca dari Open-Meteo.</p>
+                </div>
+                <span class="weather-icon">🌤️</span>
+            </div>
+            <div id="weatherContent" aria-live="polite">
+                Mengambil data cuaca...
+            </div>
+            <button id="refreshWeather" class="secondary-btn" type="button">
+                ↻ Perbarui Cuaca
+            </button>
+        </section>
+
+        <footer>
+            <p>StudySpace © <span id="year"></span> · Built for better study habits.</p>
+        </footer>
+    </main>
+</body>
+</html>
