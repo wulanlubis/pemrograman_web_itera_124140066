@@ -1,0 +1,42 @@
+.app-layout {
+  max-width: 1050px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  background-color: #f7f5fc;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(156, 132, 217, 0.12);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px dashed #e2daee;
+  padding-bottom: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #4a3b69;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: #6c5c8d;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.navbar nav a:hover {
+  background-color: #ebdffc;
+  color: #4a3b69;
+}
