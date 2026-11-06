@@ -3,3 +3,5 @@
 Tugas praktikum Pemrograman Web ITERA.
 
 - [Pertemuan 1: Mini POS Kantin](wulandarilubis_124140066_pertemuan1/)
+- [Pertemuan 2: Personal Dashboard](wulandarilubis_124140066_pertemuan2/)
+- [Pertemuan 3: Manajemen Buku Pribadi](wulandarilubis_124140066_pertemuan3/)
