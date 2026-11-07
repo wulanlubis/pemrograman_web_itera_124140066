@@ -68,14 +68,14 @@ angin. Data cuaca membutuhkan koneksi internet.
 
 ## Screenshot
 Screenshot aplikasi setelah dijalankan:
-- `screenshots/dashboard.png`
-- `screenshots/taskmanagement.png`
+![halaman beranda](screenshots/dashboard.png)
+![Manajemen Tugas](screenshots/taskmanagement.png)
 
 ## Pengujian
-- [ ] Menambah tugas baru.
-- [ ] Mengedit tugas.
-- [ ] Menghapus tugas.
-- [ ] Mengubah status selesai.
-- [ ] Mencari dan memfilter tugas.
-- [ ] Memuat ulang halaman dan memeriksa persistensi data.
-- [ ] Menguji data cuaca ketika internet tersedia.
+- Menambah tugas baru.
+- Mengedit tugas.
+- Menghapus tugas.
+- Mengubah status selesai.
+- Mencari dan memfilter tugas.
+- Memuat ulang halaman dan memeriksa persistensi data.
+- Menguji data cuaca ketika internet tersedia.
