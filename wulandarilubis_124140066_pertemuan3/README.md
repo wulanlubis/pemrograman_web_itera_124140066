@@ -1,4 +1,4 @@
-# 📚 Aplikasi Manajemen Buku Pribadi
+# Manajemen Buku Pribadi
 
 Aplikasi web untuk mencatat koleksi buku pribadi dengan status **Milik**, **Sedang Dibaca**, atau **Ingin Dibeli**. Dibuat dengan React (Vite) dan tema pastel purple.
 
@@ -17,7 +17,7 @@ npm run dev     # jalankan aplikasi
 npm run test    # jalankan unit test
 ```
 
-## Screenshot
+## Screenshot hasil
 | Home | Statistik |
 |------|-----------|
 | ![Home](./src/docs/beranda.png) | ![Stats](./src/docs/statistik.png) |
