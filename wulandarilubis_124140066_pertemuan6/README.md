@@ -1,8 +1,8 @@
 # Pyramid RESTful API: Mahasiswa & Matakuliah
 
-**Nama:** Wulandari Lubis
-**NIM:** 124140066
-**Kelas Praktikum:** RA
+- **Nama:** Wulandari Lubis
+- **NIM:** 124140066
+- **Kelas Praktikum:** RA
 
 ## Deskripsi
 
